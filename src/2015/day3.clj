@@ -42,3 +42,6 @@
      parse-movements
      track-houses
      count)
+
+((comp count set) (apply concat (map track-houses [(take-nth 2 (parse-movements puzzle))
+                                                   (take-nth 2 (rest (parse-movements puzzle)))])))
