@@ -1,5 +1,7 @@
-(defproject aoc "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.11.1"]]
+(defproject aoc "1.0.0"
+  :dependencies [[org.clojure/clojure "1.11.1"]
+                 [digest "1.4.10"]]
+
   :main ^:skip-aot aoc.core
   :resource-paths ["shared" "resources"]
   :target-path "target/%s"
