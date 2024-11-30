@@ -2,7 +2,7 @@
   (:require
    [clojure.string :as str]))
 
-;;Read in the data
+;;Read in the data 
 (def puzzle (slurp "resources/day5.puzzle.input"))
 
 ;;example input
