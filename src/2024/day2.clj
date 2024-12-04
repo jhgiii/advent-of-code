@@ -7,6 +7,7 @@
        (map #(str/split % #"\s+"))
        (map (fn [row] (map #(Integer/parseInt %) row)))))
 
+;;Part 1
 (defn valid-distances? [coll]
   (let [distances (map #(abs (- %1 %2)) coll (rest coll))]
     (every? #(<= 1 % 3) distances)))
@@ -31,3 +32,23 @@
        (valid-distances? coll)))
 
 (count (filter safe? puzzle-input))
+
+;;Part 2
+
+(defn part2-safe? [coll]
+  (or (safe? coll) ;; Already safe
+      (some (fn [i]
+              (safe? (concat (take i coll) (drop (inc i) coll))))
+            (range (count coll)))))
+
+
+(->> puzzle-input
+     (map part2-safe?)
+     (remove nil?)
+     count)
+
+
+
+
+
+
